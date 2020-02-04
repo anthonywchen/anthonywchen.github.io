@@ -1,0 +1,650 @@
+<!-- HIT template: DataCollection-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+
+<style>
+	.content {
+	  padding: 0 10px;
+	  display: none;
+	  overflow: hidden;
+	  background-color: #f1f1f1;
+	}
+	#tasks .task{
+		display: none;
+	}
+	#tasks .task.current{
+		display: block;
+	}
+	#submitButton{
+		white-space: normal;
+	}
+	.active, .collapsible:hover {
+	  background-color: #999;
+	}
+	.collapsible {
+		background-color: white;
+		color: blue;
+		cursor: pointer;
+		padding: 12px;
+		width: 100%;
+		border: none;
+		text-align: center;
+		outline: none;
+	  	font-size: 20px;
+	}
+</style>	
+
+<section class="container" id="DataCollection"><!-- Instructions -->
+	
+<!-- <h2><span style="color:green; font-family:Verdana"> <center> HIT: Judge if two answers are the same (MCScript)</center></span> </h2> -->
+<!-- <h4><span style="color:black; font-family:Verdana"><center> <strong>Please answer the following 10 questions, referring to the instructions and examples when necessary.</strong></center></span></h4><br/> -->
+
+<h2><span style="color:green; font-family:Verdana"><center> Qualification Task: Judge if two answers are the same (MCScript)</center></span> </h2>
+<h4><span style="color:black; font-family:Verdana"><center> Read the instructions and examples, even if you have done similar tasks, as the examples may have changed.</center></span></h4><br/>
+<h4><span style="color:black; font-family:Verdana"><center> Then answer the <strong>10</strong> questions, referring to the examples when necessary. You will need <strong>at least 7 correct to pass</strong>. You will be paid whether you pass or not.</center></span></h4><br/>
+<h4><span style="color:black; font-family:Verdana"><center>If you pass, you will receive the <strong>"mcscript"</strong> qualification. The qualification will allow you to work on the <strong>1,000 HITs</strong> for this task that we will release over time.</center></span></h4><br/>
+
+<div style="padding-left: 3em; padding-right: 3em; border:solid #000; border-width: 1px;">
+<!--*********************************
+		Task Instructions
+*********************************-->
+<button type="button" class="collapsible"><strong><u>Task Instructions (Click to Expand/Collapse)</u></strong></button>
+<div class="content">
+	<h5>
+		In this task, you are given a passage, a question, a correct answer, and a predicted answer.<br /><br />
+		The task is to <font color="#FF0000"><em>score how closely a predicted answer captures the same information (i.e. have the same meaning) as a correct answer</em></font> using the <em><strong><u>passage</u></strong></em>, <em><strong><u>question</u></strong></em>, and human <em><strong><u>commonsense knowledge</u></strong></em>. 
+
+
+		<br /> <br /> 
+		Scoring is on a scale <font color="#FF0000"><em> from 1 to 5 </em></font>. 
+		<br />
+		
+		A <font color="#FF0000"><em>1</em></font> score means the predicted answer captures none of the information of the correct answer, and thus is a completely wrong answer.
+		<br /> 
+		
+		A <font color="#FF0000"><em>5</em></font> score means the predicted answer captures the same information as the correct answer, and thus is a completely right answer.
+
+		<br /><br /><br />
+
+		<u>Note:</u> A predicted answer may answer the question correctly, but to be given a score of 5, <font color="#FF0000;"><b>it must be equivalent to the correct answer</b></font>.<br/><br/>
+		<u>Note:</u> The score you give should not depend on the capitalization of the correct and predicted answer.<br/><br/>
+		<u>Note:</u> A helpful tip for searching for the correct answer in the passage is using Control+F to search for it.<br/><br/>
+	</h5>
+</div>
+
+<!--*********************************
+		Examples
+*********************************-->
+<button type="button" class="collapsible"><strong><u>Examples Sorted by Score (Click to Expand/Collapse)</u></strong></button>
+<div class="content">
+
+	<h4><strong><font color="blue">(Completely Right)</font> Predicted answers that should recieve a <font color="red">5</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		Some ways a predicted answer can get a score of 5.
+
+		<ul>
+			<li> It is clear that that the predicted and correct answers refer to the same person, place, or object.</li>
+			<li> The predicted and correct answers are synonyms. </li>
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> &hellip; &hellip; <br />
+			<strong>Question:</strong>  <br />
+			<strong>Correct Answer:</strong>  <br />
+			<strong>Predicted Answer:</strong>   <br />
+			<strong><font color="purple">Justification:</font></strong> <br />
+		</div><br />
+
+	<h4><strong><font color="blue">(Mostly Right)</font> Predicted answers that should recieve a <font color="red">4</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		A score of 4 means a predicted answer is perfect with a minor detail wrong. Some ways a predicted answer can get a score of 4.
+		<ul>
+			<li> The predicted answer is a little ungrammatical.</li>
+			<li> The predicted answer is a <strong>little</strong> unspecific (e.g. the correct answer is the city but the predicted answer is the country of the city).</li>
+			<li> The predicted answer gets the gender wrong (e.g. he vs she, him vs her).</li>
+			<li> The predicted answer gets the plurality wrong (e.g. he vs they, policeman vs policemen).</li>
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> &hellip; &hellip; <br />
+			<strong>Question:</strong>  <br />
+			<strong>Correct Answer:</strong>  <br />
+			<strong>Predicted Answer:</strong>   <br />
+			<strong><font color="purple">Justification:</font></strong> <br />
+		</div><br />
+
+	<h4><strong><font color="blue">(Half Right)</font> Predicted answers that should recieve a <font color="red">3</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		Some ways a predicted answer can get a score of 3.
+		<ul>
+			<li> The prediction gets half of the details right (see example 1). </li>
+			<li> The prediction gets the details right, but is quite unspecific (see example 2) </li>
+			<li> The correct answer is a list but the prediction only gets some of the elements of the list.</li>
+			<li> The correct answer is a single item (person, object, etc) but the prediction adds some extra items.</li>
+			<li> The predicted answer gets the first name right but the last name wrong (or vice versa).</li>
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> &hellip; &hellip; <br />
+			<strong>Question:</strong>  <br />
+			<strong>Correct Answer:</strong>  <br />
+			<strong>Predicted Answer:</strong>   <br />
+			<strong><font color="purple">Justification:</font></strong> <br />
+		</div><br />
+
+	<h4><strong><font color="blue">(Mostly Wrong)</font> Predicted answers that should recieve a <font color="red">2</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		A score of 2 means that the predicted answer is incorrect, but there is some slight redeemable quality to it.
+		<ul>
+			<li> The predicted answer is clearly wrong, but there is some word overlap between the correct and predicted answer that makes it seem slighly correct and the predicted answer is grammatical. (See example 1) </li>
+			<li> The prediction gets one thing correct, but more than one thing wrong. (See example 2)</li>
+			<li> The predicted gets a detail wrong that significantly affects the meaning, but still gets some minor details correct.</li>
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> &hellip; &hellip; <br />
+			<strong>Question:</strong>  <br />
+			<strong>Correct Answer:</strong>  <br />
+			<strong>Predicted Answer:</strong>   <br />
+			<strong><font color="purple">Justification:</font></strong> <br />
+		</div><br />
+
+	<h4><strong><font color="blue">(Completely Wrong)</font> Predicted answers that should recieve a <font color="red">1</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		There are a number of ways a predicted answer can get a score of 1.
+		<ul>
+			<li> <strong>TRICKY!!!</strong> A predicted answer can technically be a correct answer to the question, but if it does not have the same meaning as the correct answer, it is a score of 1 for this task. (see example 1) </li>
+			<li> The predicted doesn't make any sense or is very ungrammatical.</li>
+			<li> The answer gets all details wrong (e..g the name(s) are completely wrong, places are completely wrong, etc). </li>
+			<li> The predicted answer is opposite of the correct answer (e.g. yes vs no, hot vs cold, etc.)
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> &hellip; &hellip; <br />
+			<strong>Question:</strong>  <br />
+			<strong>Correct Answer:</strong>  <br />
+			<strong>Predicted Answer:</strong>   <br />
+			<strong><font color="purple">Justification:</font></strong> <br />
+		</div><br />
+
+	</div>
+</div> 
+
+<!--*********************************
+			Task
+*********************************-->
+<p hidden="">mcscript_qual</p>
+
+<!-- Tasks -->
+<div id="tasks">
+	<div id="task1" class="task">
+		<p hidden="">-</p>
+		<p hidden="">1</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">Sometimes for dinner I like to have fish instead of chicken or beef.  When I want to have fish for dinner I will go to my local fish market and pick out something I like.  Some times it might be salmon, sometimes tuna, or maybe a white fish like tilapia or flounder.  I will buy a pound of it, and the fish monger will wrap it in wax paper and put it in a bag for me.  Once I have it home, I check it, finding it clean and not smelling at all like fish.  I will put it in a glass casserole dish and season it with salt, pepper, garlic, lemon, vinegar and olive oil.  I might put a few onions in with it.  I will turn on the oven and while the oven gets hot I will make a salad.  Once the oven is hot I will put the fish inside and set a timer.  While the fish bakes, I will make other side dishes.  When the timer rings I know its done and I carefully take it out with oven mitts.  It smells so good of garlic and its nice and cooked through.  While I set the table, I let it cool and after a few minutes I serve my self a piece and my salad and side dishes.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">How did they cook the fish?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Baked</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">yes , they put it in the oven</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 1 -->
+
+	<div id="task2" class="task">
+		<p hidden="">-</p>
+		<p hidden="">2</p>
+		
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">My wife invited some friends over yesterday to watch one of their favorite foods.  Because we were going to have guests over, we wanted to make sure the bathroom was clean in case they needed to use it.  To clean the bathroom, we got out the cleaning supplies from the closet.  We got out glass cleaner, toilet bowl cleaner, paper towels, and a scrubber.  We took turns washing the mirrors in the bathroom, organizing the counter, and then cleaning the toilet.  I was the one assigned to do that, of course.  I made sure that there wasn't any dirt or gross things on the toilet.  I poured the toilet bowl cleaner into the bowl and scrubbed it all over the toilet.  After I did that, I got the paper towels and made sure that I cleaned up all the wet stuff that was left over on the toilet and the seat.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What tools did they use to clean the bathroom?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Glass cleaner, toilet bowl cleaner, paper towels, and a scrubber</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">glass cleaner , toilet cleaner</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 2 -->
+
+	<div id="task3" class="task">
+		<p hidden="">-</p>
+		<p hidden="">3</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">Last night after dinner, I had "dishwasher duty." That means that it was my turn to do the dishes and unload the dishwasher. After the dishwasher had washed the dishes, I first opened the door to the dishwasher. I unloaded the bottom rack first. That way, if any water drips or leftover food were stuck on the dishes still, they wouldn't trickle down to my clean dishes. The bottom drawer usually has my plates in it. After unloading the bottom drawer, I unloaded the top drawer, which usually contains my cups, utensils, and my bowls. I use a towel to dry off any leftover water drips. I then put all of the dishes back into the original cupboard places that they came from. That means that I put my plates in the cupboard near my sink, and I put my cups in the cupboard near my fridge. Lastly, I put my utensils and bowls in a cupboard near the microwave.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">When did they open the dishwasher?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">After the dishwasher washed the dishes</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">last night after dinner</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 3 -->
+
+	<div id="task4" class="task">
+		<p hidden="">-</p>
+		<p hidden="">4</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">I was at camp and getting ready to lead a workshop teaching cooking on a campfire. Luckily it had not rained for a few days so all the wood in the area was dry. I had some large logs that were sitting by the fire ring so I went searching for some smaller sticks and kindling. I built a log cabin structure out of the larger logs. Inside the log cabin structure I put some very small tinder as well as some balled up pieces of newspaper. I lit the newspaper and continued adding very small pieces of wood to it. When the small pieces started catching I started adding larger twigs. As smaller pieces started catching on fire I kept added larger and larger twigs and sticks until the big logs started burning. I continued to add sticks so I could get a nice sized fire burning that would create lots of hot coals so we could cook on them.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">who lit the fire</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">the teacher</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">the narrator</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 4 -->
+
+	<div id="task5" class="task">
+		<p hidden="">-</p>
+		<p hidden="">5</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">I needed to clean up my flat. I had to get my broom and vacuum and all the cleaners I would need. I started by going around and picking up any garbage I seem, like used candy wrappers and old bottles of water.I threw them away. I went around and picked up and dishes that were out and put them in the sink then washed them. I used my broom to sweep up all the dust and dirt off the floors the hard floors, and the vacuum to clean up the floors that had rugs and carpets. When the hard floors were swept, I used a bucket with floor cleaner and water, and a mop, to mop them up. As the dried I took a rag and began dusting everything in the room. The t.v., the tables and counters and everything else that was a hard surface, I used the rag to dust. My flat looked very nice when it was clean.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">Why did the flat needed cleaning?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">It was a big mess</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">it was dirty</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 5 -->
+
+	<div id="task6" class="task">
+		<p hidden="">-</p>
+		<p hidden="">6</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">I walk into the kitchen. I am hungry. It is still early in the morning, so breakfast would be appropriate. Eggs should do it. I open my refrigerator and grab 1 egg. I look in my cabinets and also grab a small pan. I put the pan on the stove and turn the knob on the side of the stove until the gas lights underneath my pan. I keep the fire low. While this heats up, I grab some butter from my refrigerator. I also get a spatula from my kitchen drawer. I scoop some butter out of the container with my spatula, then transfer the butter to the small pan. The butter begins to melt on the stove top. It is time to crack my egg and begin cooking. I crack my egg lightly on the counter top until the contents begin to ooze. I position my egg over the small pan and break the egg into two pieces, so that the egg lands on the small pan. I crack the yolk with my spatula. I then wait 3 minutes while the egg cooks. I sprinkle salt and pepper over the egg. When it is time, I flip the egg and repeat the process. When it is done, I remove the egg from the pan with my spatula and put the egg on a plate. It is time to eat.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">why did they heat the food?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Because raw eggs are not nice</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">They were hungry</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 6 -->
+
+	<div id="task7" class="task">
+		<p hidden="">-</p>
+		<p hidden="">7</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">I needed to visit my Grandma upstate , so I decided to take a train . I purchased my tickets online and printed out a receipt . I packed a bag . The next day , I headed over to the train station and checked in at the ticket counter . I was early , so I picked a spot on a bench and sat down . After a short while , everybody lined up to get on the train . A train worker checked all of our tickets . I entered the train and picked out a seat for myself . Then I loaded my bag overhead . Once everyone was on the train , our conductor announced that we were leaving the station . Another train worker came around and took everyone 's tickets from them . I spent the ride looking at scenery out the window and reading mostly . Eventually , the train conductor announced my stop . I retrieved my bag from the overhead compartment , and headed downstairs and off of the train .</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">How long did they wait for the train?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">a short time</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">a short</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 7 -->
+
+	<div id="task8" class="task">
+		<p hidden="">-</p>
+		<p hidden="">8</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">Last night, my friends and I wanted to make a bonfire. So, we made sure that we had some fire wood. We went to the back of her yard and gathered up some dry wood. My friend reminded us that the wood had to be dry, or else it would not burn very well. Next, we all helped out by placing the chunks of wood into the fire pit. Once we stacked the wood into the fire pit, my friend grabbed a lighter and lighter fluid. My friend poured some of the lighter fluid out onto the wood, and then used the lighter to light the wood. It took a few tries, but the wood finally caught on fire, and we were able to start our bonfire. As the fire continued to burn, we added more wood or newspaper to keep the fire burning. We all had a fun time sitting around the fire and talking.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What kind of wood did they use to build the bonfire?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Dry wood.</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Wood</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 8 -->
+
+	<div id="task9" class="task">
+		<p hidden="">-</p>
+		<p hidden="">9</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">I was getting ready to set the alarm so that I could wake up early  the next morning when I realized that's the batteries were dead and needed to be changed. So I took the battery cover off of the bottom of the alarm clock, which is where I saw the the two dead AA batteries. I took the batteries out, one by one, and through the old batteries in the garbage. I then opened a brand-new store-bought pack of AA batteries, and removed two of them from the packaging. Following the direct actions within the battery compartment of the alarm clock, I inserted each of the batteries one by one, ensuring that the positive and negative terminals were facing in the correct directions. Once both batteries were in place and snugly intact, I put the battery cover back on the bottom of the alarm clock in order to secure the batteries in place. I then turned over the clock so that it was sitting right side up and facing me. I push the power button and the face of the clock lit up, with 12 o'clock blinking in red.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">Did they need to go to the store to buy the batteries?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">No they didn't</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">No.</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 9 -->
+
+	<div id="task10" class="task">
+		<p hidden="">-</p>
+		<p hidden="">10</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">I wanted to watch a movie and decided to rent one form a store video rental. I drove to the store and entered the building. It was set up in sections according to movie genres; drama, comedy, horror, action, animated, thriller. I decided to head to the drama section. I looked through there available titles. I picked out a recent release and brought the empty box up to the counter. There the attendant took the film cover and went to find the corresponding film. They brought back the film in a clear cover and told me I had three days for the rental. I paid for it next. Then I went home and watched the film. It was enjoyable and I was pleased with my selection.The next day I returned it to the store. I did not want to forget to return it because there are late fees for late movie returns.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">who rented the movie</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">The narrator</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">the attendant</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 10 -->
+
+</div> <!-- end of tasks -->
+<div style="text-align: center">
+	<button id="prev">Previous Task</button>
+	<button id="next">Next Task</button>
+</div>
+<!-- Comments -->
+<div>
+	<h4><strong>(Optional) Comments about the task or the examples. </strong></h4>
+	<input id="comment" name="comment" size="100" type="text" />
+	<br /><br /><br />
+</div>
+
+</section>
+<!--*********************************
+	End Data Collection Layout
+*********************************-->
+
+<!-- End Data Collection Layout --><!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><!-- External CSS references -->
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet -->
+
+<!--*********************************
+			Scripts
+*********************************-->
+
+<!-- Script for next/prev -->
+<script>
+
+// go to next/prev
+// from: https://stackoverflow.com/questions/28294145/navigate-through-multiple-divs-using-next-prev
+function updateItems(delta)
+{
+	var $items = $('#tasks').children().filter(function(i,b){
+		return $('#'+b.id).children().find('.question').text()!='none';
+	});
+	var $current = $items.filter('.current');
+	$current = $current.length ? $current : $items.first();
+	var index = $current.index() + delta;
+	// Range check the new index
+	index = (index < 0) ? 0 : ((index > $items.length) ? $items.length : index); 
+	$current.removeClass('current');
+	$current = $items.eq(index).addClass('current');
+	// Hide/show the next/prev
+	$('#prev').prop('disabled', $current.is($items.first()))
+	$('#next').prop('disabled', $current.is($items.last()))
+}
+
+$(function() {	
+	// activate radio buttons for null
+	var nullItems = $('#tasks').children().filter(function(e,b){
+		return $('#'+b.id).children().find('.question').text()=='none';
+	});
+	nullItems.children(".checkboxes").children(".checkbox").children("input").prop('checked', true);
+	// activate next/prev buttons
+	$("#next").click(function () {
+		event.preventDefault();
+		updateItems(1);
+	});
+	$("#prev").click(function () {
+		event.preventDefault();
+		updateItems(-1);
+	});
+	// Cause initial selection
+	updateItems(0);
+})
+
+</script>
+
+<!-- Script for expanding button -->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+	coll[i].addEventListener("click", function() {
+	this.classList.toggle("active");
+	var content = this.nextElementSibling;
+	if (content.style.display === "block") {
+	  content.style.display = "none";
+	} else {
+	  content.style.display = "block";
+	}
+  });
+}
+</script>
+
+<!-- End internal style sheet --><!-- External JS references --><script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><!-- Open internal javascript -->
+
+<script>
+	window.onload = function() {document.getElementById('submitButton').setAttribute('onClick', 'return validateForm()'); }
+
+	function validateForm(){
+		// Returns True if all the tasks have been completed, otherwise throws an alert.
+		var $items = $('#tasks').children().filter(function(i,b){
+			return $('#'+b.id).children().find('.question').text()!='none';
+		});
+		l = $items.length;
+		for (i = 0; i < l; i++) {
+			var checkboxes = $items[i].getElementsByClassName('checkboxes')
+			checkbox1 = checkboxes[0].getElementsByClassName('checkbox')[0].getElementsByTagName('*')[0].checked;
+			checkbox2 = checkboxes[0].getElementsByClassName('checkbox')[1].getElementsByTagName('*')[0].checked;
+			checkbox3 = checkboxes[0].getElementsByClassName('checkbox')[2].getElementsByTagName('*')[0].checked;
+			checkbox4 = checkboxes[0].getElementsByClassName('checkbox')[3].getElementsByTagName('*')[0].checked;
+			checkbox5 = checkboxes[0].getElementsByClassName('checkbox')[4].getElementsByTagName('*')[0].checked;
+
+			// This is true if this task wasn't completed
+			not_completed = !checkbox1 && !checkbox2 && !checkbox3 && !checkbox4 && !checkbox5
+			if(not_completed){
+				alert("Please make sure to complete all tasks!")
+				return false;
+			}
+		} 
+		return true;
+	}
+</script>
