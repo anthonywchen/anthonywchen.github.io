@@ -1,0 +1,764 @@
+<!-- HIT template: DataCollection-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+
+<style>
+	.content {
+	  padding: 0 10px;
+	  display: none;
+	  overflow: hidden;
+	  background-color: #f1f1f1;
+	}
+	#tasks .task{
+		display: none;
+	}
+	#tasks .task.current{
+		display: block;
+	}
+	#submitButton{
+		white-space: normal;
+	}
+	.active, .collapsible:hover {
+	  background-color: #999;
+	}
+	.collapsible {
+		background-color: white;
+		color: blue;
+		cursor: pointer;
+		padding: 12px;
+		width: 100%;
+		border: none;
+		text-align: center;
+		outline: none;
+	  	font-size: 20px;
+	}
+</style>	
+
+<section class="container" id="DataCollection"><!-- Instructions -->
+	
+<!-- <h2><span style="color:green; font-family:Verdana"> <center> HIT: Judge if two answers are the same (Quoref)</center></span> </h2> -->
+<!-- <h4><span style="color:black; font-family:Verdana"><center> <strong>Please answer the following 10 questions, referring to the instructions and examples when necessary.</strong></center></span></h4> -->
+<!-- <h4><span style="color:black; font-family:Verdana"><center> <strong>We will be actively monitoring answers to ensure quality.</strong></center></span></h4><br/> -->
+
+<h2><span style="color:green; font-family:Verdana"><center> Qualification Task: Judge if two answers are the same (Quoref)</center></span> </h2>
+<h4><span style="color:black; font-family:Verdana"><center> Read the instructions and examples, even if you have done similar tasks, as the examples may have changed.</center></span></h4><br/>
+<h4><span style="color:black; font-family:Verdana"><center> Then answer the <strong>10</strong> questions, referring to the examples when necessary. You will need <strong>at least 8 correct to pass</strong>. You will be paid whether you pass or not.</center></span></h4><br/>
+<h4><span style="color:black; font-family:Verdana"><center>If you pass, you will receive the <strong>"quoref"</strong> qualification. The qualification will allow you to work on the <strong>1,000 HITs</strong> for this task that we will release over time.</center></span></h4><br/>
+
+<div style="padding-left: 3em; padding-right: 3em; border:solid #000; border-width: 1px;">
+<!--*********************************
+		Task Instructions
+*********************************-->
+<button type="button" class="collapsible"><strong><u>Task Instructions (Click to Expand/Collapse)</u></strong></button>
+<div class="content">
+	<h5>
+		In this task, you are given a passage, a question, a correct answer, and a predicted answer.<br /><br />
+		The task is to <font color="#FF0000"><em>score how closely a predicted answer captures the same information (i.e. have the same meaning) as a correct answer</em></font> using the <em><strong><u>passage</u></strong></em>, <em><strong><u>question</u></strong></em>, and human <em><strong><u>commonsense knowledge</u></strong></em>. 
+
+
+		<br /> <br /> 
+		Scoring is on a scale <font color="#FF0000"><em> from 1 to 5 </em></font>. 
+		<br />
+		
+		A <font color="#FF0000"><em>1</em></font> score means the predicted answer captures none of the information of the correct answer, and thus is a completely wrong answer.
+		<br /> 
+		
+		A <font color="#FF0000"><em>5</em></font> score means the predicted answer captures the same information as the correct answer, and thus is a completely right answer.
+
+		<br /><br /><br />
+
+		<u>Note:</u> A predicted answer may answer the question correctly, but to be given a score of 5, <font color="#FF0000;"><b>it must be equivalent to the correct answer</b></font>.<br/><br/>
+		<u>Note:</u> The score you give should not depend on the capitalization of the correct and predicted answer.<br/><br/>
+		<u>Note:</u> A helpful tip for searching for the correct answer in the passage is using Control+F to search for it.<br/><br/>
+	</h5>
+</div>
+
+<!--*********************************
+		Examples
+*********************************-->
+<button type="button" class="collapsible"><strong><u>Examples Sorted by Score (Click to Expand/Collapse)</u></strong></button>
+<div class="content">
+
+	<h4><strong><font color="blue">(Completely Right)</font> Predicted answers that should recieve a <font color="red">5</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		Some ways a predicted answer can get a score of 5.
+
+		<ul>
+			<li> It is clear that that the predicted and correct answers refer to the same person, place, or object.</li>
+			<li> The predicted and correct answers are synonyms. </li>
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Graf Spee sustains damage, and takes refuge in the port of Montevideo, Uruguay to make repairs. According to international law, the ship may remain only long enough to make repairs for seaworthiness, not to refit her for battle.<br />
+			<strong>Question:</strong> What's the name of the place where it's disallowed to refit the Graf Spee for battle? <br />
+			<strong>Correct Answer:</strong> Montevideo <br />
+			<strong>Predicted Answer:</strong> Montevideo, Uruguay  <br />
+			<strong><font color="purple">Justification:</font></strong> As stated in the passage, Montevideo is indeed in Uruguay. Therefore, the predicted answer matches the correct answer since it captures the same location. <br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Eric Fletcher Waters was killed at Aprilia, during the Battle of Anzio. He is commemorated at the Cassino War Cemetery.<br />
+			<strong>Question:</strong> Where is Eric Fletcher Waters commemorated? <br />
+			<strong>Correct Answer:</strong> Cassino War Cemetery <br />
+			<strong>Predicted Answer:</strong> at the Cassino War Cemetery.  <br />
+			<strong><font color="purple">Justification:</font></strong> Adding the phrase "at the" to the correct answer does not change its meaning and thus the predicted answer is perfect.<br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Dave Hughes of Slant Magazine had positive comments about the album: "That Wainwright has both ambition and prodigious abilities."&hellip; <br />
+			<strong>Question:</strong> What is the name of the person that had the ambition and the prodigious abilities? <br />
+			<strong>Correct Answer:</strong> Wainwright <br />
+			<strong>Predicted Answer:</strong> Martha Wainwright, <br />
+			<strong><font color="purple">Justification:</font></strong> From the passage, "Wainwright" and "Martin Wainright" refer to the same person. Moreover, the question does not ask specifically for the last name, so providing the full name is acceptable and should receieve a 5.<br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Graf Spee, under Captain Hans Langsdorff, inflicts much damage on her foes; However, Graf Spee sustains damage herself, and takes refuge in the neutral port of Montevideo, Uruguay to make repairs&hellip;  <br />
+			<strong>Question:</strong> Who commands the vessel being repaired at Montevideo? <br />
+			<strong>Correct Answer:</strong> Captain Hans Langsdorff <br />
+			<strong>Predicted Answer:</strong>  Hans Langsdorff, <br />
+			<strong><font color="purple">Justification:</font></strong> "Captin Hans Langsdorff" and "Hans Langsdorff" refer to the same person.  <br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Johnny helps transform the dive into a first-class nightclub called the Silver Slipper, and Charlie makes him a partner to reward him for his efforts. <br />
+			<strong>Question:</strong> What did Johnny do to make Charlie reward him? <br />
+			<strong>Correct Answer:</strong> transform the dive <br />
+			<strong>Predicted Answer:</strong>  transform the dive into a first-class nightclub called the Silver Slipper <br />
+			<strong><font color="purple">Justification:</font></strong> The correct and predicted answer both capture the same event. The predicted answer adds some extra details, but the details it adds are factually correct so score this a 5. <br />
+		</div><br />		
+
+	<h4><strong><font color="blue">(Mostly Right)</font> Predicted answers that should recieve a <font color="red">4</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		A score of 4 means a predicted answer is perfect with a minor detail wrong. Some ways a predicted answer can get a score of 4.
+		<ul>
+			<li> The predicted answer is a little ungrammatical or a little bit wrong.</li>
+			<li> The predicted answer is a <strong>little</strong> unspecific (e.g. the correct answer is the city but the predicted answer is the country of the city).</li>
+			<li> The predicted answer gets the gender wrong (e.g. he vs she, him vs her).</li>
+			<li> The predicted answer gets the plurality wrong (e.g. he vs they, policeman vs policemen).</li>
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> The journey throws them dangerous experiences on unpredictable Ugandan roads&hellip; <br />
+			<strong>Question:</strong> In what country are the two children traveling? <br />
+			<strong>Correct Answer:</strong> Uganda <br />
+			<strong>Predicted Answer:</strong> Ugandan <br />
+			<strong><font color="purple">Justification:</font></strong> The predicted answer is slightly wrong because it gives the wrong part-of-speech. The correct answer is a noun, while the predicted answer is the adjective form. Therfore, we give it a 4 instead of a 5. <br />
+		</div><br />	
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Charlot becomes annoyed with Gertie's efforts to stand out. He threatens to fire her&hellip; <br />
+			<strong>Question:</strong> What is the last name of the person who threatens to fire someone? <br />
+			<strong>Correct Answer:</strong> Charlot <br />
+			<strong>Predicted Answer:</strong> Charlot's <br />
+			<strong><font color="purple">Justification:</font></strong> The predicted answer adds an extra "'s" and is unnecessary. We deem this slightly wrong (the extra "'s'" doesn't really change the meaning of the correct answer) and give it a 4.<br />
+		</div><br />		
+
+
+	<h4><strong><font color="blue">(Half Right)</font> Predicted answers that should recieve a <font color="red">3</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		Some ways a predicted answer can get a score of 3.
+		<ul>
+			<li> The question asks for the first name and the prediction gives the full or last name or nickname (see example 1).</li>
+			<li> The prediction is correct, but adds some extra words which are unnecessary or makes the prediction ungrammatical (see example 2)</li>
+			<li> The prediction gets the details right, but is quite unspecific (see example 3) </li>
+			<li> The correct answer is a single item (person, object, etc) but the prediction adds some extra items or vice versa(see example 4).</li>
+			<li> The question asks for the last name and the prediction gives the full or first name or nickname.</li>
+			<li> The question asks for the nickname and the prediction gives the real name.</li>
+		</ul>
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Philibert Rabezoza was born in 1923. His father, a herdsman and farmer from Fianarantsoa, had previously been a singer. <br />
+			<strong>Question:</strong> What is the first name of the person whose father was from Fianarantsoa? <br />
+			<strong>Correct Answer:</strong> Philibert <br />
+			<strong>Predicted Answer:</strong> Philibert Rabezoza <br />
+			<strong><font color="purple">Justification:</font></strong> The question asks for the first name, and the predicted answer gives the full name. This is thus half right.<br />
+		</div><br />	
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> The tour suffered from poor ticket sales and some performances were cancelled; Waters estimated that he lost £400,000 on the tour. <br />
+			<strong>Question:</strong> What is the last name of the person who had tour dates cancelled? <br />
+			<strong>Correct Answer:</strong> Waters <br />
+			<strong>Predicted Answer:</strong> Star.Waters <br />
+			<strong><font color="purple">Justification:</font></strong> The predicted answer gets the last name, but adds in the word "Star" which fairly affects the meaning of the predicted answer. <br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Lucas is eaten by the T-rex in an attempt to fight it while John is killed by a velociraptor. <br />
+			<strong>Question:</strong> What kills Lucas? <br />
+			<strong>Correct Answer:</strong> a T-rex <br />
+			<strong>Predicted Answer:</strong> dinosaurs <br />
+			<strong><font color="purple">Justification:</font></strong> While it is technically true that a T-rex is a dinosaur, there is also a velociraptor, which is another type of dinosaur. Therefore the predicted answer is vague, as it coule be referring to either dinosaurs. This answer is thus half correct. <br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> An expedition, led by Dr. Tom Friend accompanied by trapper Ed Shelley and photographer Andrew McNee, arrives at the monastery in search of the legendary Yeti or Abominable Snowman &hellip;McNee is injured by a bear trap and dies in a fall. <br />
+			<strong>Question:</strong> What is the profession of the person who falls and dies? <br />
+			<strong>Correct Answer:</strong> photographer <br />
+			<strong>Predicted Answer:</strong> photographer Andrew McNee and Sherpa guide <br />
+			<strong><font color="purple">Justification:</font></strong> If the predicted answer was "photographer Andrew McNee", it would get a 5. It adds an extra person, so we give this a 3. <br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> It ends with Mama Bear and Junyer Bear dressed as parents of the American homeland (George Washington and Abraham Lincoln respectively) <br />
+			<strong>Question:</strong> Who dresses as Abraham Lincoln? <br />
+			<strong>Correct Answer:</strong> Junyer Bear <br />
+			<strong>Predicted Answer:</strong> Junyer Bear dressed as parents of the American homeland (George Washington <br />
+			<strong><font color="purple">Justification:</font></strong> If the predicted answer was "Junyer Bear dressed as parents of the American homeland", we would give it a 4, because the parents is plural while Junyer Bear is a single person. The extra "(George Washington" reduces the correctness and so we give it a 3.<br />
+		</div><br />		
+
+	<h4><strong><font color="blue">(Mostly Wrong)</font> Predicted answers that should recieve a <font color="red">2</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		A score of 2 means that the predicted answer is incorrect, but there is some slight redeemable quality to it.
+		<ul>
+			<li> The predicted gets a detail wrong that significantly affects the meaning, but still gets some minor details correct (see example 1 and 2).</li>
+			<li> The prediction would normally get a 3 but is more ungrammatical (see example 3)
+			<li> The prediction gets some detail correct, but more than one thing wrong and/or is highly ungrammatical (see example 4). </li>
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Two songs, "Kreuzberg" and "I Still Remember", explore homosexuality; the latter details an unrequited crush of a boy for his schoolmate. <br />
+			<strong>Question:</strong> What is the name of the song that details an unrequited crush of a boy for his schoolmate? <br />
+			<strong>Correct Answer:</strong> I Still Remember <br />
+			<strong>Predicted Answer:</strong> "I  <br />
+			<strong><font color="purple">Justification:</font></strong> The predicted answer contains part of the correct answer, however, the predicted answer does not make much sense on its own so we say it is more wrong than right. <br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> A Boston Globe article written by Simon details Barack Obama's win in the 2008 U.S. Presidential election. <br />
+			<strong>Question:</strong> What is the name of the paper that Simon wrote for? <br />
+			<strong>Correct Answer:</strong> Boston Globe <br />
+			<strong>Predicted Answer:</strong> Boston <br />
+			<strong><font color="purple">Justification:</font></strong> We assign a score of 2 to this example for the same reason as the first example. <br />
+		</div><br />	
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> When Gannon and Police Commissioner Jane Kirkpatrick visit the site with them the next day, no evidence of the ritual can be found. Kirkpatrick removes Friday and Streebek from the case. <br />
+			<strong>Question:</strong> What is the last name of the person that visits the cult site with the person that removes Friday and Streebek from the case? <br />
+			<strong>Correct Answer:</strong> Gannon <br />
+			<strong>Predicted Answer:</strong> Gannon and Police Commissioner Jane Kirkpatrick(who <br />
+			<strong><font color="purple">Justification:</font></strong> If the predicted answer was "Gannon and Police Commissioner Jane Kirkpatrick", we would give it a 3 since it adds an extra person. However, the extra "(who" make the predicted answer more incorrect and we deem it a 2.<br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Love married Cobain on Waikiki Beach in Honolulu, Hawaii. She wore a satin and lace dress once owned by actress Frances Farmer. <br />
+			<strong>Question:</strong> What is the name of the person that wore a dress once owned by actress Frances Farmer? <br />
+			<strong>Correct Answer:</strong> Love <br />
+			<strong>Predicted Answer:</strong> Love married Cobain <br />
+			<strong><font color="purple">Justification:</font></strong> "Love" is the correct answer, but it addds "married Cobain" which doesn't make sense in the context of the question so we deem it a 2.<br />
+		</div><br />		
+
+	<h4><strong><font color="blue">(Completely Wrong)</font> Predicted answers that should recieve a <font color="red">1</font>:</strong><br /></h4>
+		<div style="padding-left: .1em; border:solid #000; border-width: 1px;">&nbsp;
+		There are a number of ways a predicted answer can get a score of 1.
+		<ul>
+			<li> The predicted doesn't make any sense and/or is very ungrammatical (see example 1).</li>
+			<li> The answer gets all details wrong (e..g the name(s) are completely wrong, places are completely wrong, etc) (see example 2 and 3). </li>
+			<li> The predicted answer is opposite of the correct answer (e.g. yes vs no, hot vs cold, etc.)
+		</ul> 
+		</div>&nbsp;
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> In 1987, Waters released Radio K.A.O.S., an album based on a man named Billy from an impoverished Welsh mining town who has the ability to physically tune into radio waves in his head. Billy, angry at the state of the world, simulates a nuclear attack.  <br />
+			<strong>Question:</strong> 	What is the name of the character who simulates a nuclear attack?<br />
+			<strong>Correct Answer:</strong> Billy <br />
+			<strong>Predicted Answer:</strong> Billy from an impoverished Welsh mining town who has the ability to physically tune into radio waves in his head. Billy <br />
+			<strong><font color="purple">Justification:</font></strong> While the predicted answer has the word "Billy", it adds way too many extra details that don't make any sense in the context of the question. Therefore, this answer is completely wrong. <br />
+		</div><br />
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> In 1933, Freya Roth is a young German girl engaged to a Nazi party member. When she realizes the true nature of his political views she breaks the engagement. Her father, Professor Roth, does not abide by the attitude of the new order towards scientific fact. <br />
+			<strong>Question:</strong> What is the name of the person whose work the Nazis are suspicious of? <br />
+			<strong>Correct Answer:</strong> Professor Roth <br />
+			<strong>Predicted Answer:</strong> Freya Roth <br />
+			<strong><font color="purple">Justification:</font></strong> From the passage, Professor Roth and Frey Roth are completely different entities (even though they share a last name). Therefore the predicted answer is completely wrong and we give it a 1.<br />
+		</div><br />		
+
+		<div style="padding-left: 3em;">
+			<strong>Passage:</strong> Rakoto Frah rose to fame when he was selected by Malagasy President Philibert Tsiranana to perform on the sodina &hellip; Over the course of his career he recorded over 800 original compositions. <br />
+			<strong>Question:</strong> What is the common name of the person who recorded over 800 original compositions?  <br />
+			<strong>Correct Answer:</strong> Rakoto Frah <br />
+			<strong>Predicted Answer:</strong> Philibert Tsiranana <br />
+			<strong><font color="purple">Justification:</font></strong> Similar to the last example, the predicted answer is a completely different entity than the correct answer. <br />
+		</div><br />		
+		
+	</div>
+</div> 
+
+<!--*********************************
+			Task
+*********************************-->
+<p hidden="">quoref_qual</p>
+
+<!-- Tasks -->
+<div id="tasks">
+	<div id="task1" class="task">
+		<p hidden="">-</p>
+		<p hidden="">1</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">It is the Florida Everglades in 1863. Four deserters of the Confederate Army—Sergeant Todd, Plunkett, Cockney and the Kid—are hiding out. The Colonel, a fellow deserter, appears from the brush with a note from an Indian who has arranged to take him to the ocean so he may be taken to Cuba. When the Indian guide is found dead by Seminoles, the foursome reluctantly join forces with the Colonel in order to reach the coast and ride out the rest of the Civil War. As the group treks through the dangerous Florida everglades, it's revealed that Plunkett has stolen a large amount of gold from the Confederate army, which Cockney wants to steal from him. The group continues its trek, and it is revealed Cockney is drop-dead afraid of snakes, and being in close contact with them sends him into a paralyzed state. Cockney also reveals that the Colonel deserted after giving drunk orders during the Battle of Murfreesboro, leading to a slaughter. A drought ensues, and when the group reaches water, they also find two dead fellow deserters, killed by Seminoles. The Colonel wishes to bury them, but the foursome disagrees, citing the danger of nearby Seminoles. However, the Kid changes their minds. Soon after, the Colonel begins experiencing troubles, getting a fever, and hallucinating. The group sees smoke, and the Sergeant (the leader of the group) goes to investigate and is attacked by a panther. The rest of the group follows and encounters a seemingly abandoned Seminole settlement. The Colonel, in his deranged state, charges head first into the encampment and is shot by an arrow. The Sergeant rejoins the group and they are attacked by Seminoles. Though they escape, the Colonel dies that evening. After the Colonel's death, the Sergeant declares that it's every man for himself.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What are the names of all the people who find two dead deserters killed by Seminoles?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Sergeant Todd</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Todd,</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score1" name="score1" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 1 -->
+
+	<div id="task2" class="task">
+		<p hidden="">-</p>
+		<p hidden="">2</p>
+		
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">Four lifelong friends from the Boston neighborhood of Charlestown, Douglas "Doug" MacRay, James "Jem" Coughlin, Albert "Gloansy" MacGloan, and Desmond "Dez" Elden, rob a bank. They take the manager, Claire Keesey, hostage, but release her unharmed. When they find out Claire lives in their neighborhood, Doug begins to follow her to find out how much she has told the police, and to make sure that Jem does not eliminate her as a witness. Soon a romance grows between them, which Doug hides from the gang. As they grow closer, Doug tells Claire of his search for his long-lost mother, who he believes went to live with his aunt in Tangerine, Florida. He also recounts his chance to be a professional hockey player which he threw away for a life of crime, following in his father's footsteps. She in turn tells Doug that she saw a tattoo on one of the robbers, and he realizes that she can identify Jem and send them all to prison. He knows that Jem will kill her if he discovers the truth, so he persuades her that the authorities cannot protect her, and she decides not to tell the police. After Claire tells Doug about being harassed and her car vandalized by Alex, a local Dominican thug, Doug enlists Jem for a favor, which they can never talk about. Doug and Jem don hockey masks and violently assault the offenders without Jem knowing the true reason for the favor is to protect Claire.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What is the first name of the person who decides to follow Claire?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Douglas</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Doug</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score2" name="score2" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 2 -->
+
+	<div id="task3" class="task">
+		<p hidden="">-</p>
+		<p hidden="">3</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">Following the release of The Final Cut, Waters embarked on a solo career. In 1984, he released his first solo album, The Pros and Cons of Hitch Hiking, a project about a man's dreams across one night that dealt with Waters' feelings about monogamy and family life versus "the call of the wild". In the end the character, Reg, chooses love and matrimony over promiscuity. The album featured guitarist Eric Clapton, jazz saxophonist David Sanborn, and artwork by Gerald Scarfe. Kurt Loder described The Pros And Cons of Hitch Hiking as a "strangely static, faintly hideous record". Rolling Stone rated the album a "rock bottom one star". Years later, Mike DeGagne of AllMusic praised the album for its "ingenious symbolism" and "brilliant use of stream of consciousness within a subconscious realm", rating it four out of five stars.Waters began touring in support of the album, aided by Clapton, a new band, new material, and a selection of Pink Floyd favourites. Waters débuted his tour in Stockholm on 16 June 1984. The tour suffered from poor ticket sales and some performances at larger venues were cancelled; Waters estimated that he lost £400,000 on the tour. In March 1985, Waters went to North America to play smaller venues with the Pros and Cons Plus Some Old Pink Floyd Stuff—North America Tour 1985. The Pros and Cons of Hitch Hiking has been certified Gold by the RIAA.In 1986, Waters contributed songs and a score to the soundtrack of the animated movie When the Wind Blows, based on the Raymond Briggs book of the same name. His backing band featuring Paul Carrack was credited as The Bleeding Heart Band. In 1987, Waters released Radio K.A.O.S., a concept album based on a mute man named Billy from an impoverished Welsh mining town who has the ability to physically tune into radio waves in his head. Billy first learns to communicate with a radio DJ, and eventually to control the world's computers. Angry at the state of the world in which he lives, he simulates a nuclear attack. Waters followed the release with a supporting tour also in 1987.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What was the name of the movie that the band featuring Paul Carrack provided the soundtrack for?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">When the Wind Blows</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">When</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score3" name="score3" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 3 -->
+
+	<div id="task4" class="task">
+		<p hidden="">-</p>
+		<p hidden="">4</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">Overall, reception of the album was positive. Stephen Holden of Blender called Wainwright's tribute "a fabulous stunt in which a gay singer channeled the spirit of the ultimate gay icon", and declared the album was "as good an introduction to the great American songbook as any". Pitchfork Media's Stephen Troussé wrote that Wainwright "elegantly outdoes [Garland] on a couple of the ballads" and also compliments guest performer Martha Wainwright, "who turns in a stunning, showstopping 'Stormy Weather' in an appropriately brazen bid to steal the show". In his review for Rolling Stone, Robert Christgau stated it was "a relief to hear him essay the show tunes and Tin Pan Alley chestnuts of this tribute album". Furthermore, he wrote that the songs "expand [Wainwright's] melodic compass", allowing him to "bring something new to them too – namely, sexuality in the sensuality as opposed to gender-preference sense". Dave Hughes of Slant Magazine had positive comments about the album: "That Wainwright has the temerity to cover such a bona fide classic—and the chops to pull it off without breaking a limb or his brain—speaks both to his ambition and to his prodigious abilities."The album did receive some criticism. After noting Garland's lifelong attempt to master pitch and articulation, Christgau claimed Wainwright's habit of "slid[ing] past notes and draw[ing] out the final syllables of lines are signatures indistinguishable from tics". Entertainment Weekly's Chris Willman wrote that Wainwright's "delicate upper range is nicely attuned to some of the ballads, but anything that requires belting is pretty much a loss". Mark Edwards of The Times called Wainwright's performance an acquired taste, stating his "trademark delivery" is "lazy and somewhat slurred". Dave Hughes' review pointed out Wainwright's "problem with the brassy high notes in an otherwise energetic take on 'That's Entertainment'", but admits it would be unfair to hold this against him since Garland's live performance was not perfect either. Hughes appropriately notes, "Ain't nobody perfect".</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What is the full name of the person that said Martha Wainwright had a brazen bid to steal the show?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Stephen Troussé</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Stephen Holden</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score4" name="score4" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 4 -->
+
+	<div id="task5" class="task">
+		<p hidden="">-</p>
+		<p hidden="">5</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">After their HIV positive mother's death, Derick and Margaret collect wood and construct a human-length box with wheels. Then, they journey with it from Kampala to Kasangombe in a heartbreaking bid to overcome poverty and experience hope. The journey throws them dangerous experiences on unpredictable Ugandan roads. Their mother's dying wish had set them off on a seemingly impossible journey to find a relative they do not even know. Before her death, she leaves them an envelope addressed to her sister (their auntie) who is married to a hard-working man living in a distant village called Kasangombe with their kids. Ingeniously, Derick creates a coffin using wood he collected from a rubbish dump and adds luggage bag rollers brought by Margaret. On their journey from Kampala City to their aunt's place, they are offered a lift by a seemingly kind man (played by Joel Okuyo Atiku) in a truck who is amazed by their "box". He introduces them to a kid he had taken under his wings relaxing at the back and shows them a photo of a house they can possess if they work for him. At night though, Margaret sees a scary dream where their helper is not exactly as kind as he seemed so she runs out of the truck. Derick follows and the boy throws out their coffin before waving. They walk the rest of the distance. Initially, their uncle (played by Isaac Muwawu) did not want them in his house because he thought they were HIV-infected. Derick overheard him quarrel with his aunt at night and shook Margaret in the morning from another dream (this time beautiful, where both siblings were smiling and enjoying a picnic in a glorious garden with their aunt, uncle, cousins, dead parents and some whites). Derick convinced her to walk away from the home with him but without a reason.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">Where are Derick and Margaret going to find their aunt?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Kasangombe</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">a distant village called Kasangombe</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score5" name="score5" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 5 -->
+
+	<div id="task6" class="task">
+		<p hidden="">-</p>
+		<p hidden="">6</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">In 1933, Freya Roth is a young German girl engaged to a Nazi party member. When she realizes the true nature of his political views she breaks the engagement and turns her attention to anti-Nazi Martin Breitner. Her father, Professor Roth, does not abide by the attitude of the new order towards scientific fact. Though his stepsons Erich and Otto eagerly embrace the regime, Professor Roth's reluctance to conform leads at first to a boycott of his classes and eventually to his arrest and a sentence of forced physical labor. His wife is permitted a five-minute visit in which the professor urges her to take Freya and her younger brother and leave the country. He dies soon after. Freya is kept from leaving by Nazi officials suspicious of her father's work. She reunites with Martin and together they attempt to escape through a mountain pass. A squad reluctantly led by her former fiancee gives chase and Freya is fatally wounded, dying in Martin's arms just after they cross the border. Later, Erich and Otto are informed of their sister's death. Erich responds with anger towards Martin.  Otto, however, experiences an epiphany, and flees their once-happy home, rejecting the Nazis and their cruel doctrine.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What is the full name of the person who reunites with Martin?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Freya Roth</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Freya</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score6" name="score6" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 6 -->
+
+	<div id="task7" class="task">
+		<p hidden="">-</p>
+		<p hidden="">7</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">American sailor David Martens, on shore leave in England, visits his brother Jack's grave. He meets fashion designer Sally Meadows, who by coincidence works with Jack's ex-fiancée, Diana, a model. Successful stylist Kingsley Beauchamp and financial backer Madame Dupont own the company where Sally and Diana are employed. Expensive jewels are to be worn by Diana when she models a new dress, but Beauchamp hires two men, Costard and Podd, to break into a safe after hours and steal the gems. Diana stumbles on the robbery and Costard kills her. He knocks David unconscious and decides to frame him for the theft, crashing a car with David inside, reporting it stolen and placing a ruby bracelet in David's pocket. While the police make David a prime suspect, Beauchamp and Costard dispose of Diana's body and the diamonds. They decide to murder David after he suspects them, using gas, but Sally saves him. Diana's body is found in a river. David goes to Beauchamp's home and discovers the missing dress worn by Diana. He knows that Beauchamp is about to fly to Amsterdam, so he hurries to the airport. Costard is there, being double-crossed while Podd smuggles the jewels on Beauchamp's behalf. The police arrive in time to arrest all three.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">Who frames the sailor?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Costard</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Costard and Podd, to break into a safe after hours and steal the gems. Diana stumbles on the robbery and Costard</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score7" name="score7" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 7 -->
+
+	<div id="task8" class="task">
+		<p hidden="">-</p>
+		<p hidden="">8</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">Shortly after completing the tour for Pretty on the Inside, Love married Cobain on Waikiki Beach in Honolulu, Hawaii on February 24, 1992. She wore a satin and lace dress once owned by actress Frances Farmer, and Cobain wore plaid pajamas. During Love's pregnancy, Hole recorded a cover of "Over the Edge" for a Wipers tribute album, and recorded their fourth single, "Beautiful Son", which was released in April 1993. On August 18 of that year, the couple's only child, a daughter, Frances Bean Cobain, was born in Los Angeles. The couple subsequently relocated to Carnation, Washington and then to Seattle.Love's first major media exposure came in a September 1992 profile of herself and Cobain for Vanity Fair by journalist Lynn Hirschberg, entitled "Strange Love." After being asked to participate in a cover story for the magazine, Love was urged by her manager to accept the request. In the year prior, Love and Cobain had developed a heroin addiction, and the profile painted the couple in an unflattering light and suggested that Love had been addicted to heroin during her pregnancy. The article ultimately resulted in the Los Angeles Department of Children and Family Services investigating, and custody of Love and Cobain's newborn daughter, Frances, was temporarily awarded to Love's sister, Jaimee. Love claimed she was misquoted by Hirschberg, and asserted that she had immediately quit using heroin during her first trimester after she discovered she was pregnant. Love would later claim that the publication of the article had serious implications for her marriage as well as Cobain's mental state, suggesting it was a factor in his suicide.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What is the name of the person for whose marriage the article had serious implications?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Love</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Love would later claim that the publication of the article had serious implications for her marriage as well as Cobain's</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score8" name="score8" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 8 -->
+
+	<div id="task9" class="task">
+		<p hidden="">-</p>
+		<p hidden="">9</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">At a jousting tournament in 14th-century Europe, young squires William Thatcher, Roland, and Wat discover that their master, Sir Ector, has died. If he had completed one final pass he would have won the tournament. Destitute, William wears Ector's armour to impersonate him, winning the tournament and taking the prize. Although only nobles are allowed in tournaments, William is now inspired to compete and win more prizes. Roland and Wat would rather take their winnings and leave, but William convinces them to stay and train him to joust. Along the way to his first tournament in Rouen, the trio encounters a young Geoffrey Chaucer, who is also destitute and agrees to forge the patent of nobility that will allow William to enter under the assumed name of "Sir Ulrich von Liechtenstein" from Gelderland. At the tournament, William is brought before Simon the Summoner and Peter the Pardoner: Chaucer has a gambling problem and is in their debt. William demands Chaucer be released and promises payment. In the course of competition, William's armor is damaged very badly. He goads Kate, a blacksmith, to repair it without payment and goes on to win the tournament's sword event. In the joust, he faces Sir Thomas Colville, who withdraws from the tournament after being injured by William, though they exchange a ceremonial pass so that Colville can retain the honor of never having failed to complete a match. The proceedings are observed by Jocelyn, a noblewoman with whom William has become infatuated, and Count Adhemar, a rival both in the joust and for Jocelyn's heart. In the final joust, Adhemar defeats William. At the prize ceremony, William vows revenge on Adhemar who then taunts William by telling him that he has been weighed, measured and found wanting. William then uses some of his winnings from the sword event to pay off Chaucer's debt.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">Who is asked to releaser a debtor?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Simon the Summoner</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Simon the Summoner and Peter the Pardoner:</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score9" name="score9" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 9 -->
+
+	<div id="task10" class="task">
+		<p hidden="">-</p>
+		<p hidden="">10</p>
+
+		<div id="context">
+			<h4><strong>Part 1. Read the following passage: </strong></h4>
+			<p style="font-size: 12pt;font-family:Verdana;color: black;">Shortly after completing the tour for Pretty on the Inside, Love married Cobain on Waikiki Beach in Honolulu, Hawaii on February 24, 1992. She wore a satin and lace dress once owned by actress Frances Farmer, and Cobain wore plaid pajamas. During Love's pregnancy, Hole recorded a cover of "Over the Edge" for a Wipers tribute album, and recorded their fourth single, "Beautiful Son", which was released in April 1993. On August 18 of that year, the couple's only child, a daughter, Frances Bean Cobain, was born in Los Angeles. The couple subsequently relocated to Carnation, Washington and then to Seattle.Love's first major media exposure came in a September 1992 profile of herself and Cobain for Vanity Fair by journalist Lynn Hirschberg, entitled "Strange Love." After being asked to participate in a cover story for the magazine, Love was urged by her manager to accept the request. In the year prior, Love and Cobain had developed a heroin addiction, and the profile painted the couple in an unflattering light and suggested that Love had been addicted to heroin during her pregnancy. The article ultimately resulted in the Los Angeles Department of Children and Family Services investigating, and custody of Love and Cobain's newborn daughter, Frances, was temporarily awarded to Love's sister, Jaimee. Love claimed she was misquoted by Hirschberg, and asserted that she had immediately quit using heroin during her first trimester after she discovered she was pregnant. Love would later claim that the publication of the article had serious implications for her marriage as well as Cobain's mental state, suggesting it was a factor in his suicide.</p>
+			<br/>
+		</div>
+
+		<h4><strong>Part 2. Read the following question, correct answer, and predicted answer:</strong></h4>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Question: 
+			<span style="color:#FF8C00;" class="question">What was the name of the band that recorded Beautiful Son?</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Correct Answer:
+			<span style="color:green;">Hole</span></span></div>
+		<br/>
+
+		<div style="padding-left: 3em;"><span style="font-size: 12pt;font-family:Verdana,cursive;">Predicted Answer:
+			<span style="color:red;">Love's pregnancy, Hole</span></span></div>
+		<br/>
+
+		<h4><strong>Part 3. Select the score that best reflects <span style="color:#0000FF">how closely a predicted answer captures the same information as the correct answer.</span></strong></h4>
+		<div class="checkboxes" style="padding-left: 2em;font-size: 12pt;">
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="1" /> 1 - Completely Wrong Answer</div>
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="2" /> 2 - Mostly Wrong</div>
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="3" /> 3 - Half Right</div>
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="4" /> 4 - Mostly Right</div>
+			<div class="checkbox"><input id="score10" name="score10" type="radio" value="5" /> 5 - Perfect Answer</div>
+		</div>
+	</div> <!-- end of task 10 -->
+
+</div> <!-- end of tasks -->
+<div style="text-align: center">
+	<button id="prev">Previous Task</button>
+	<button id="next">Next Task</button>
+</div>
+<!-- Comments -->
+<div>
+	<h4><strong>(Optional) Comments about the task or the examples. </strong></h4>
+	<input id="comment" name="comment" size="100" type="text" />
+	<br /><br /><br />
+</div>
+
+</section>
+<!--*********************************
+	End Data Collection Layout
+*********************************-->
+
+<!-- End Data Collection Layout --><!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><!-- External CSS references -->
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet -->
+
+<!--*********************************
+			Scripts
+*********************************-->
+
+<!-- Script for next/prev -->
+<script>
+
+// go to next/prev
+// from: https://stackoverflow.com/questions/28294145/navigate-through-multiple-divs-using-next-prev
+function updateItems(delta)
+{
+	var $items = $('#tasks').children().filter(function(i,b){
+		return $('#'+b.id).children().find('.question').text()!='none';
+	});
+	var $current = $items.filter('.current');
+	$current = $current.length ? $current : $items.first();
+	var index = $current.index() + delta;
+	// Range check the new index
+	index = (index < 0) ? 0 : ((index > $items.length) ? $items.length : index); 
+	$current.removeClass('current');
+	$current = $items.eq(index).addClass('current');
+	// Hide/show the next/prev
+	$('#prev').prop('disabled', $current.is($items.first()))
+	$('#next').prop('disabled', $current.is($items.last()))
+}
+
+$(function() {	
+	// activate radio buttons for null
+	var nullItems = $('#tasks').children().filter(function(e,b){
+		return $('#'+b.id).children().find('.question').text()=='none';
+	});
+	nullItems.children(".checkboxes").children(".checkbox").children("input").prop('checked', true);
+	// activate next/prev buttons
+	$("#next").click(function () {
+		event.preventDefault();
+		updateItems(1);
+	});
+	$("#prev").click(function () {
+		event.preventDefault();
+		updateItems(-1);
+	});
+	// Cause initial selection
+	updateItems(0);
+})
+
+</script>
+
+<!-- Script for expanding button -->
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+	coll[i].addEventListener("click", function() {
+	this.classList.toggle("active");
+	var content = this.nextElementSibling;
+	if (content.style.display === "block") {
+	  content.style.display = "none";
+	} else {
+	  content.style.display = "block";
+	}
+  });
+}
+</script>
+
+<!-- End internal style sheet --><!-- External JS references --><script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><!-- Open internal javascript -->
+
+<script>
+	window.onload = function() {document.getElementById('submitButton').setAttribute('onClick', 'return validateForm()'); }
+
+	function validateForm(){
+		// Returns True if all the tasks have been completed, otherwise throws an alert.
+		var $items = $('#tasks').children().filter(function(i,b){
+			return $('#'+b.id).children().find('.question').text()!='none';
+		});
+		l = $items.length;
+		for (i = 0; i < l; i++) {
+			var checkboxes = $items[i].getElementsByClassName('checkboxes')
+			checkbox1 = checkboxes[0].getElementsByClassName('checkbox')[0].getElementsByTagName('*')[0].checked;
+			checkbox2 = checkboxes[0].getElementsByClassName('checkbox')[1].getElementsByTagName('*')[0].checked;
+			checkbox3 = checkboxes[0].getElementsByClassName('checkbox')[2].getElementsByTagName('*')[0].checked;
+			checkbox4 = checkboxes[0].getElementsByClassName('checkbox')[3].getElementsByTagName('*')[0].checked;
+			checkbox5 = checkboxes[0].getElementsByClassName('checkbox')[4].getElementsByTagName('*')[0].checked;
+
+			// This is true if this task wasn't completed
+			not_completed = !checkbox1 && !checkbox2 && !checkbox3 && !checkbox4 && !checkbox5
+			if(not_completed){
+				alert("Please make sure to complete all tasks!")
+				return false;
+			}
+		} 
+		return true;
+	}
+</script>
