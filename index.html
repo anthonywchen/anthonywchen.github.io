@@ -1,110 +1,89 @@
 <!DOCTYPE html>
 <html>
-	
-	<head>
+
+    <head>
 		<meta charset="utf-8"/>
 		<title>Anthony Chen</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		
-		<link rel="stylesheet" href="css/font-awesome.min.css"/>
-		
-		<link href="css/bootstrap.min.css" rel="stylesheet"/>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/menucollapse.js"></script>
-		<script type="text/javascript" src="js/arrow78.js"></script>
-		<script type="text/javascript" src="js/custom.js"></script>
-	</head>
-	
-	<body id="page-top" class="index">
-		
-		<!-- Information, CV, Email, Twitter -->
-		<section  name="home" id="home" style="margin-top:40px">
-			<div class="container">
-				<div align="left" class="col-md-3">
-					<a target="_blank" href="images/me.png">
-						<img id="mobile-img" src="images/me.png" width="200" border="0" height="310" alt=""></a>
-				</div>
-				<div align="left" class="col-md-4">
-					<h1>Anthony Chen
-						<h5><i>University of California, Irvine</i></h5>
-					</h1><br/>
-					
-					<h4>
-						<p>
-							<a href="CV.pdf" class="btn-sm btn-primary">CV</a>
-							<a href="email.html" class="btn-sm btn-primary">Email</a>
-							<a href="https://twitter.com/_anthonychen" class="btn-sm btn-primary">Twitter</a>
-						</p>
-					</h4>
-				</div>
-				
-			</div>
-		</section>
-		
-		<!-- Biography -->
-		<section name="intro" id="intro">
-			<div class="container lead">
-				<div style="text-align: left; margin-top:10px" class="col-md-12">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
 
-                    <b class="noshow" style="display:none;" id="tab-1">
-                        <button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-intro-content').toggle();">Bio <span class="glyphicon glyphicon-chevron-down"></span></button>
-                    </b>
-					<div class="allshow" style="display:none;" id="tab-intro-content">
-						<hr class="star-primary">
-						<p class="lead">
-						Welcome! I'm a second-year PhD student at the <a target="_blank" href="https://uci.edu/">University of California, Irvine</a> advised by <a target="_blank" href="http://sameersingh.org/">Sameer Singh</a>. My research is in machine learning and natural language processing. <br/><br/>
+    <body>
+        <div class="container mt-4">
 
-						I'm currently working on evaluating the metrics used in question answering (QA).
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<!-- Research Section -->
-		<section  name="publications" id="publications">
-			<div class="container lead">
-				<div style="text-align: left; margin-top:10px" class="col-md-12">
-					
-					<b class="noshow" style="display:none;" id="tab-3">
-						<button class="btn btn-default btn-lg btn-block" style="display: block; width: 100%;" onclick="javascript:$('#tab-publications-content').toggle();">Publications  <span class="glyphicon glyphicon-chevron-down"></span></button>
-					</b>
-					<div class="allshow" style="display:none;" id="tab-publications-content">
-						<hr class="star-primary">
+        	<!-- INTRODUCTION -->
+            <div class="row">
+                <div class="col-lg-9">
+	            	<h1>Anthony Chen</h1>
+	                <p class="lead">
+						Welcome! 
+						I'm a third-year PhD student working on machine learning and natural language processing at the <a target="_blank" href="https://uci.edu/">University of California, Irvine</a> advised by <a target="_blank" href="http://sameersingh.org/">Sameer Singh</a>. 
+						I am fortunate to also work with <a target="_blank" href="https://matt-gardner.github.io/">Matt Gardner</a> from AI2 and <a target="_blank" href="https://gabrielstanovsky.github.io/">Gabi Stanovsky</a> from Hebrew University.
+						<br><br>
+
+						My research is focused on the following topics:<br/><br/>
+
+						<strong>Natural Language Generation:</strong> Much of NLP research is focused on <a href="https://super.gluebenchmark.com/leaderboard/" target="_blank">classification</a>, however, classification formats can <a target="_blank" href="https://arxiv.org/abs/1908.07898">permit easy heuristics</a>. Posing tasks in a generation format alleviates some of these issues, but evaluation is challenging. We have work showing that <a href="https://allennlp.org/mocha" target="_blank">learned metrics are a better path towards NLG evaluation</a>.
 						
-						<h2>Publications</h2>
+						<br/><br/>
 
-						<ul>
-							Evaluating Question Answering Evaluation <a href="https://www.aclweb.org/anthology/D19-5817/" class="btn-sm btn-primary">Paper</a> <a href="evaluatingqa/mrqa_slides.pdf" class="btn-sm btn-primary">Slides</a> <a href="evaluatingqa/correlation_data.zip" class="btn-sm btn-primary">Data</a>
-							<h4>
-								<b>Anthony Chen</b>, Gabriel Stanovsky, Sameer Singh, and Matt Gardner <br/>
-								In MRQA Workshop @ EMNLP 2019 <br/>
-								<font color="red">Best Paper Award!</font></li><br/>
-							</h4>
-						</ul>
+						<b>Long Tail of Natural Language:</b> Natural distributions of language have a <a target="_blank" href="https://en.wikipedia.org/wiki/Long_tail">long tail</a> which isn't well represented in existing datasets. I'm interested in designing datasets that can represent the long tail and creating models that are robust on these long tail instances. Stay tuned for future work!
 
-					</div>
-				</div>
-			</div>
-		</section>
-			
-		<!-- Credits -->
-		<hr class="star-primary">
-		<footer>
-			<small>
-				<center>
-					Credits: AR template
-					<a onclick="javascript:$('#credit').toggle();"><img border="0" src="images/ccby.png"/></a>
-					<div style="display:none;" id="credit">[AR template available under Creative Commons CC BY 4.0 licence:
-						<a href="https://github.com/dmsl/academic-responsive-template" target="_blank">
-							https://github.com/dmsl/academic-responsive-template
-						</a> ]
-					</div>
-				</center>
-			</small>
-		</footer>
-		
-	</body>
-	
+						<center>
+							<a href="email.html" target="_blank" class="btn btn-outline-info">Email</a> 
+							<a href="https://scholar.google.com/citations?user=n3PSuQMAAAAJ&hl=en" target="_blank" class="btn btn-outline-info">Google Scholar</a> 
+							<a href="https://www.semanticscholar.org/author/Anthony-Chen/52151521" target="_blank" class="btn btn-outline-info">Semantic Scholar</a>
+							<a href="https://twitter.com/_anthonychen" target="_blank" class="btn btn-outline-info">Twitter</a>
+							<a href="" target="_blank" class="btn btn-outline-info">CV</a>
+						</center>
+	                </p>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" height="375" src="images/me.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEWS -->
+	        <hr>
+	        <div class="row">
+	            <div class="col">
+	                <h2>News</h2>
+	                <ul>
+		                <b>Sep 2020</b> MOCHA, a dataset for training & evaluating generative QA metrics, has been accepted to EMNLP!
+		                <br>
+		                <b>Jun 2020</b> Started as a research intern at Apple on the <a target="_blank" href="https://www.apple.com/siri/">Siri</a> Query Understanding team. 
+		                <br>
+		                <b>Nov 2019</b> Presented the <a href="https://mrqa.github.io/" target="_blank">MRQA</a> workshop <a href="https://www.aclweb.org/anthology/D19-5817/" target="_blank">best paper</a>  at EMNLP in Hong Kong.
+	                </ul>
+	            </div>
+	        </div>
+
+			<!-- RESEARCH -->
+			<hr>
+	        <div class="row">
+	            <div class="col">
+				<h2>Publications</h2>
+				<ul>
+					<span style="font-size:20px">MOCHA: A Dataset for Training and Evaluating Generative Reading Comprehension Metrics</span><br/>
+					<b>Anthony Chen</b>, Gabriel Stanovsky, Sameer Singh, and Matt Gardner <br/>
+					<i>Empirical Methods in Natural Language Processing (EMNLP) 2020</i> <br/>
+					<a target="_blank" href="" class="btn-sm btn-primary">Paper</a>
+					<a target="_blank" href="https://allennlp.org/mocha" class="btn-sm btn-primary">Website</a>
+					
+					<br><br>
+					
+					<span style="font-size:20px">Evaluating Question Answering Evaluation</span><br/>
+					<b>Anthony Chen</b>, Gabriel Stanovsky, Sameer Singh, and Matt Gardner <br/>
+					<i>MRQA Workshop @ EMNLP 2019</i> <font color="red">Best Paper Award!</font></li><br/>
+					<a target="_blank" href="https://www.aclweb.org/anthology/D19-5817/" class="btn-sm btn-primary">Paper</a> 
+					<a target="_blank" href="evaluatingqa/correlation_data.zip" class="btn-sm btn-primary">Data</a>
+					<a target="_blank" href="evaluatingqa/mrqa_slides.pdf" class="btn-sm btn-primary">Slides</a> 
+					<br>
+				</ul>
+	            </div>
+	        </div>
+
+    	</div>
+    </body>
 </html>
