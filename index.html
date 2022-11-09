@@ -1,104 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-		<meta charset="utf-8"/>
-		<title>Anthony Chen</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
+<head>
+	<meta charset="utf-8" />
+	<title>Anthony Chen</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-    <body>
-        <div class="container mt-4">
-        	<!-- INTRODUCTION -->
-        	<h1>Anthony Chen</h1>
-            <div class="row">
-                <div class="col-lg-3 col-md-4 order-0 order-xs-0 order-sm-0 order-md-1 order-lg-1">
-                    <img width="250px" src="images/me.jpg" alt="">
-                </div>
-                 <div class="col-lg-9 col-md-8 order-1 order-xs-1 order-sm-1 order-md-0 order-lg-0">
-	                <p class="lead">
-						Welcome! 
-						I'm a final year PhD student working on machine learning and language understanding at UC Irvine advised by <a target="_blank" href="http://sameersingh.org/">Sameer Singh</a> and a research intern at Google hosted by <a target="_blank" href="https://research.google/people/HongraeLee/">Hongrae Lee</a> and <a target="_blank" href="https://www.kelvinguu.com/">Kelvin Guu</a>.
-						My research is motivated towards designing systems that can robustly respond to real-world queries by operating over large amounts of information and producing arbitrarily complex natural language responses.
-						<br><br>
-						<b>Natural Language Generation:</b> The ability to generate responses is imperative for creating systems that can handle arbitrarily complex queries. 
-						We have worked on designing better evaluation metrics in the form of <a href="https://arxiv.org/abs/2010.03636" target="_blank">learned metrics</a> as well as studied the factors that <a href="https://arxiv.org/abs/2109.05052" target="_blank">lead to hallucinations</a> and proposed effective mitigation strategies.
-						<br/><br/>
-						<b>Open Domain Language Reasoning:</b> Given the scale of textual data, retrieval is required for efficient reasoning. We showed retrievers <a target="_blank" href="https://arxiv.org/abs/2106.06830">are not robust on the long tail</a> of natural language and measured how interactions between retrievers and readers <a href="https://arxiv.org/abs/2109.05052" target="_blank">lead to hallucinations</a>.
-						<br/>
-						<center>
-							<a href="email.html" target="_blank" class="btn btn-outline-info">Email</a> 
-							<a href="https://scholar.google.com/citations?user=n3PSuQMAAAAJ&hl=en" target="_blank" class="btn btn-outline-info">Google Scholar</a> 
-							<a href="https://www.semanticscholar.org/author/Anthony-Chen/52151521" target="_blank" class="btn btn-outline-info">Semantic Scholar</a> 
-							<a href="https://twitter.com/_anthonychen" target="_blank" class="btn btn-outline-info">Twitter</a>
-							<a href="CV.pdf" target="_blank" class="btn btn-outline-info">CV</a>
-						</center>
-					</p>
-                </div>
-            </div>
+<body>
+	<div class="container mt-4">
+		<!-- INTRODUCTION -->
+		<h1>Anthony Chen</h1>
+		<div class="row">
+			<div class="col-lg-3 col-md-4 order-0 order-xs-0 order-sm-0 order-md-1 order-lg-1">
+				<img width="250px" src="images/me.jpg" alt="">
+			</div>
+			<div class="col-lg-9 col-md-8 order-1 order-xs-1 order-sm-1 order-md-0 order-lg-0">
+				<p class="lead">
+					Welcome!
+					I'm a final year PhD student working on machine learning and language understanding at UC Irvine
+					advised by <a target="_blank" href="http://sameersingh.org/">Sameer Singh</a> and a research intern
+					at Google hosted by <a target="_blank" href="https://research.google/people/HongraeLee/">Hongrae
+						Lee</a> and <a target="_blank" href="https://www.kelvinguu.com/">Kelvin Guu</a>. Before that, I
+					was a research intern at Verneek and at Apple.
+					<br><br>
+					My research is primarily in robust evaluation and reliable language generation.
+					These days, I've been working on <a target="_blank"
+						href="https://arxiv.org/abs/2210.08726">understanding</a>
+					and <a target="_blank" href="https://arxiv.org/abs/2109.05052">removing</a> hallucinations from the
+					output of large language models (<i>e.g.</i>, GPT-3) and making
+					them more reliable to use.
+					<br><br>
+					<center>
+						<a href="email.html" target="_blank" class="btn btn-outline-info">Email</a>
+						<a href="https://scholar.google.com/citations?user=n3PSuQMAAAAJ&hl=en" target="_blank"
+							class="btn btn-outline-info">Google Scholar</a>
+						<a href="https://www.semanticscholar.org/author/Anthony-Chen/52151521" target="_blank"
+							class="btn btn-outline-info">Semantic Scholar</a>
+						<a href="https://twitter.com/_anthonychen" target="_blank"
+							class="btn btn-outline-info">Twitter</a>
+						<a href="CV.pdf" target="_blank" class="btn btn-outline-info">CV</a>
+					</center>
+				</p>
+			</div>
+		</div>
 
-            <!-- NEWS -->
-	        <hr>
-            <h2>Recent Stuff</h2>
-        	<ul>
-				<b>Oct 2022 [Paper]</b> Generation systems like large language models are known to hallucinate.
-				However, re-training them to avoid these problems is costly.
-				<a target="_blank" href="https://arxiv.org/abs/2210.08726">In our paper</a> with Google Research, we propose to edit generated in a post-hoc fashion to remove hallucinations.
-				<br><br>
-        		<b>Jun 2022 [Industry]</b> Joined Google Research hosted by Hongrae Lee and Kelvin Guu.
-				<br><br> 
-        		<b>Nov 2021 [Conference]</b> Finally back at EMNLP for my first in-person conference in two years!
-        		<br><br>
-        		<b>Sep 2021 [Paper]</b> Retrieval-augmented generation is an exciting area of research but halluncations are a known problem with unknown causes.
-				Our <a target="_blank" href="https://arxiv.org/abs/2109.05052">EMNLP paper</a> sheds light on the factors which correlate with halluncations and provides an effective mitigation strategy.
-            </ul>
+		<!-- NEWS -->
+		<hr>
+		<h2>Recent Stuff</h2>
+		<ul>
+			<b>Oct 2022 [Paper]</b> Generation systems like large language models are known to hallucinate.
+			However, re-training them to avoid these problems is costly.
+			<a target="_blank" href="https://arxiv.org/abs/2210.08726">In our paper</a> with Google Research, we propose
+			to edit generated in a post-hoc fashion to remove hallucinations.
+			<br><br>
+			<b>Jun 2022 [Industry]</b> Joined Google Research hosted by Hongrae Lee and Kelvin Guu.
+			<br><br>
+			<b>Sep 2021 [Paper]</b> Retrieval-augmented generation is an exciting area of research but halluncations are
+			a known problem with unknown causes.
+			Our <a target="_blank" href="https://arxiv.org/abs/2109.05052">EMNLP paper</a> sheds light on the factors
+			which correlate with halluncations and provides an effective mitigation strategy.
+		</ul>
 
-			<!-- RESEARCH -->
-			<hr>
-			<h2>Publications</h2>
-			<ul>
-				<span style="font-size:20px"><a target="_blank" href="https://arxiv.org/abs/2210.08726">Attributed Text Generation via Post-hoc Research and Revision</a></span><br/>
-				Luyu Gao, Zhuyun Dai, Panupong Pasupat, <font color="green">Anthony Chen</font>, Arun Chaganty, Yicheng Fan, Vincent Zhao, Ni Lao, Hongrae Lee, Da-Cheng Juan, Kelvin Guu<br/>
-				<i>Preprint 2022</i>
-				<br><br>
+		<!-- RESEARCH -->
+		<hr>
+		<h2>Publications</h2>
+		<ul>
+			<span style="font-size:20px"><a target="_blank" href="https://arxiv.org/abs/2210.08726">Attributed Text
+					Generation via Post-hoc Research and Revision</a></span><br />
+			Luyu Gao, Zhuyun Dai, Panupong Pasupat, <font color="green">Anthony Chen</font>, Arun Chaganty, Yicheng Fan,
+			Vincent Zhao, Ni Lao, Hongrae Lee, Da-Cheng Juan, Kelvin Guu<br />
+			<i>Preprint 2022</i>
+			<br><br>
 
-				<span style="font-size:20px"><a target="_blank" href="https://arxiv.org/abs/2109.05052">Entity-Based Knowledge Conflicts in Question Answering</a></span><br/>
-				Shayne Longpre, Kartik Perisetla, <font color="green">Anthony Chen</font>, Nikhil Ramesh, Chris DuBois and Sameer Singh <br/>
-				<i>Empirical Methods in Natural Language Processing (EMNLP) 2021</i> <br/>
-				<a target="_blank" href="https://machinelearning.apple.com/research/entity-knowledge-conflicts" class="btn btn-sm btn-outline-primary">Website</a>
-				<a target="_blank" href="https://github.com/apple/ml-knowledge-conflicts" class="btn btn-sm btn-outline-primary">Code</a>
-				<a target="_blank" href="Papers/knowledge_conflicts/slides.pdf" class="btn btn-sm btn-outline-primary">Slides</a>
-				<a target="_blank" href="Papers/knowledge_conflicts/poster.pdf" class="btn btn-sm btn-outline-primary">Poster</a>
-				<br><br>
+			<span style="font-size:20px"><a target="_blank" href="https://arxiv.org/abs/2109.05052">Entity-Based
+					Knowledge Conflicts in Question Answering</a></span><br />
+			Shayne Longpre, Kartik Perisetla, <font color="green">Anthony Chen</font>, Nikhil Ramesh, Chris DuBois and
+			Sameer Singh <br />
+			<i>Empirical Methods in Natural Language Processing (EMNLP) 2021</i> <br />
+			<a target="_blank" href="https://machinelearning.apple.com/research/entity-knowledge-conflicts"
+				class="btn btn-sm btn-outline-primary">Website</a>
+			<a target="_blank" href="https://github.com/apple/ml-knowledge-conflicts"
+				class="btn btn-sm btn-outline-primary">Code</a>
+			<a target="_blank" href="Papers/knowledge_conflicts/slides.pdf"
+				class="btn btn-sm btn-outline-primary">Slides</a>
+			<a target="_blank" href="Papers/knowledge_conflicts/poster.pdf"
+				class="btn btn-sm btn-outline-primary">Poster</a>
+			<br><br>
 
-				<span style="font-size:20px"><a target="_blank" href="https://arxiv.org/abs/2106.06830">Evaluating Entity Disambiguation and the Role of Popularity in Retrieval-Based NLP</a></span><br/>
-				<font color="green">Anthony Chen</font>, Pallavi Gudipati, Shayne Longpre, Xiao Ling and Sameer Singh <br/>
-				<i>Association for Computational Linguistics and the International Joint Conference on Natural Language Processing (ACL-IJCNLP) 2021</i> <br/>
-				<a target="_blank" href="https://machinelearning.apple.com/research/evaluating-entity-disambiguation-amber" class="btn btn-sm btn-outline-primary">Website</a>
-				<a target="_blank" href="https://github.com/anthonywchen/AmbER-Sets/" class="btn btn-sm btn-outline-primary">Code</a>
-				<a target="_blank" href="https://github.com/anthonywchen/AmbER-Sets/data/" class="btn btn-sm btn-outline-primary">Data</a>
-				<a target="_blank" href="Papers/amber/amber_slides.pdf" class="btn btn-sm btn-outline-primary">Slides</a>
-				<br><br>
+			<span style="font-size:20px"><a target="_blank" href="https://arxiv.org/abs/2106.06830">Evaluating Entity
+					Disambiguation and the Role of Popularity in Retrieval-Based NLP</a></span><br />
+			<font color="green">Anthony Chen</font>, Pallavi Gudipati, Shayne Longpre, Xiao Ling and Sameer Singh <br />
+			<i>Association for Computational Linguistics and the International Joint Conference on Natural Language
+				Processing (ACL-IJCNLP) 2021</i> <br />
+			<a target="_blank" href="https://machinelearning.apple.com/research/evaluating-entity-disambiguation-amber"
+				class="btn btn-sm btn-outline-primary">Website</a>
+			<a target="_blank" href="https://github.com/anthonywchen/AmbER-Sets/"
+				class="btn btn-sm btn-outline-primary">Code</a>
+			<a target="_blank" href="https://github.com/anthonywchen/AmbER-Sets/data/"
+				class="btn btn-sm btn-outline-primary">Data</a>
+			<a target="_blank" href="Papers/amber/amber_slides.pdf" class="btn btn-sm btn-outline-primary">Slides</a>
+			<br><br>
 
-				<span style="font-size:20px"><a target="_blank" href="https://arxiv.org/abs/2010.03636">MOCHA: A Dataset for Training and Evaluating Generative Reading Comprehension Metrics</a></span><br/>
-				<font color="green">Anthony Chen</font>, Gabriel Stanovsky, Sameer Singh, and Matt Gardner <br/>
-				<i>Empirical Methods in Natural Language Processing (EMNLP) 2020</i> <br/>
-				<a target="_blank" href="https://allennlp.org/mocha" class="btn btn-sm btn-outline-primary">Website</a>
-				<a target="_blank" href="https://github.com/anthonywchen/MOCHA/" class="btn btn-sm btn-outline-primary">Code</a>
-				<a target="_blank" href="https://github.com/anthonywchen/MOCHA/blob/main/data/mocha.tar.gz" class="btn btn-sm btn-outline-primary">Data</a>
-				<a target="_blank" href="https://www.youtube.com/watch?v=ou5XGiv6zT8" class="btn btn-sm btn-outline-primary">Video</a>
-				<a target="_blank" href="Papers/mocha/mocha_slides.pdf" class="btn btn-sm btn-outline-primary">Slides</a>
-				<a target="_blank" href="https://demo.allennlp.org/evaluate-reading-comprehension" class="btn btn-sm btn-outline-primary">Demo</a>
-				<br><br>
-				
-				<span style="font-size:20px"><a target="_blank" href="https://www.aclweb.org/anthology/D19-5817/">Evaluating Question Answering Evaluation</a></span><br/>
-				<font color="green">Anthony Chen</font>, Gabriel Stanovsky, Sameer Singh, and Matt Gardner <br/>
-				<i>Machine Reading for Question Answering Workshop @ Empirical Methods in Natural Language Processing (EMNLP) 2019</i> <font color="red">Best Paper Award</font><br/>
-				<a target="_blank" href="Papers/evaluatingqa/correlation_data.zip" class="btn btn-sm btn-outline-primary">Data</a>
-				<a target="_blank" href="Papers/evaluatingqa/mrqa_slides.pdf" class="btn btn-sm btn-outline-primary">Slides</a> 
-			</ul>
+			<span style="font-size:20px"><a target="_blank" href="https://arxiv.org/abs/2010.03636">MOCHA: A Dataset for
+					Training and Evaluating Generative Reading Comprehension Metrics</a></span><br />
+			<font color="green">Anthony Chen</font>, Gabriel Stanovsky, Sameer Singh, and Matt Gardner <br />
+			<i>Empirical Methods in Natural Language Processing (EMNLP) 2020</i> <br />
+			<a target="_blank" href="https://allennlp.org/mocha" class="btn btn-sm btn-outline-primary">Website</a>
+			<a target="_blank" href="https://github.com/anthonywchen/MOCHA/"
+				class="btn btn-sm btn-outline-primary">Code</a>
+			<a target="_blank" href="https://github.com/anthonywchen/MOCHA/blob/main/data/mocha.tar.gz"
+				class="btn btn-sm btn-outline-primary">Data</a>
+			<a target="_blank" href="https://www.youtube.com/watch?v=ou5XGiv6zT8"
+				class="btn btn-sm btn-outline-primary">Video</a>
+			<a target="_blank" href="Papers/mocha/mocha_slides.pdf" class="btn btn-sm btn-outline-primary">Slides</a>
+			<a target="_blank" href="https://demo.allennlp.org/evaluate-reading-comprehension"
+				class="btn btn-sm btn-outline-primary">Demo</a>
+			<br><br>
 
-			<hr>
-    	</div>
-    </body>
+			<span style="font-size:20px"><a target="_blank" href="https://www.aclweb.org/anthology/D19-5817/">Evaluating
+					Question Answering Evaluation</a></span><br />
+			<font color="green">Anthony Chen</font>, Gabriel Stanovsky, Sameer Singh, and Matt Gardner <br />
+			<i>Machine Reading for Question Answering Workshop @ Empirical Methods in Natural Language Processing
+				(EMNLP) 2019</i>
+			<font color="red">Best Paper Award</font><br />
+			<a target="_blank" href="Papers/evaluatingqa/correlation_data.zip"
+				class="btn btn-sm btn-outline-primary">Data</a>
+			<a target="_blank" href="Papers/evaluatingqa/mrqa_slides.pdf"
+				class="btn btn-sm btn-outline-primary">Slides</a>
+		</ul>
+
+		<hr>
+	</div>
+</body>
+
 </html>
